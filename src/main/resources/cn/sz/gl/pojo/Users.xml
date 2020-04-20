@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="cn.sz.gl.dao.IUserDAO" >
+	
+	<select id="findByNameAndPwd" parameterType="cn.sz.gl.pojo.Users" resultType="cn.sz.gl.pojo.Users" >
+		select userid,loginname,loginpwd,phone,realname from users 
+		where loginname=#{loginname} and loginpwd=#{loginpwd}
+	</select>
+	
+	<select id="findUserById" parameterType="java.lang.Integer" resultType="cn.sz.gl.pojo.Users">
+		select userid,loginname,loginpwd,phone,realname from users where userid=#{userid}
+	</select>
+	
+</mapper>		
